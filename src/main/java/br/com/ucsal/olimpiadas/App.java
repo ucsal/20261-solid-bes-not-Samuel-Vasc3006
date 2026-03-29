@@ -1,5 +1,6 @@
 package br.com.ucsal.olimpiadas;
 import br.com.ucsal.olimpiadas.service.ParticipanteService;
+import br.com.ucsal.olimpiadas.service.ProvaService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -71,13 +72,11 @@ service.cadastrar(nome, email, proximoParticipanteId++);
 			System.out.println("título inválido");
 			return;
 		}
+ProvaService service = new ProvaService(provas);
+service.cadastrar(titulo, proximaProvaId++);
 
-		var prova = new Prova();
-		prova.setId(proximaProvaId++);
-		prova.setTitulo(titulo);
-
-		provas.add(prova);
-		System.out.println("Prova criada: " + prova.getId());
+System.out.println("Prova criada: " + (proximaProvaId - 1));
+		
 	}
 
 	static void cadastrarQuestao() {
