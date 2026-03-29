@@ -1,6 +1,7 @@
 package br.com.ucsal.olimpiadas;
 import br.com.ucsal.olimpiadas.service.ParticipanteService;
 import br.com.ucsal.olimpiadas.service.ProvaService;
+import br.com.ucsal.olimpiadas.service.QuestaoService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -108,16 +109,11 @@ System.out.println("Prova criada: " + (proximaProvaId - 1));
 			return;
 		}
 
-		var q = new Questao();
-		q.setId(proximaQuestaoId++);
-		q.setProvaId(provaId);
-		q.setEnunciado(enunciado);
-		q.setAlternativas(alternativas);
-		q.setAlternativaCorreta(correta);
+		QuestaoService service = new QuestaoService(questoes);
+service.cadastrar(provaId, enunciado, alternativas, correta, proximaQuestaoId++);
 
-		questoes.add(q);
+System.out.println("Questão cadastrada: " + (proximaQuestaoId - 1) + " (na prova " + provaId + ")");
 
-		System.out.println("Questão cadastrada: " + q.getId() + " (na prova " + provaId + ")");
 	}
 
 
