@@ -1,5 +1,5 @@
 package br.com.ucsal.olimpiadas;
-
+import br.com.ucsal.olimpiadas.service.ParticipanteService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -58,13 +58,9 @@ public class App {
 			return;
 		}
 
-		var p = new Participante();
-		p.setId(proximoParticipanteId++);
-		p.setNome(nome);
-		p.setEmail(email);
-
-		participantes.add(p);
-		System.out.println("Participante cadastrado: " + p.getId());
+		ParticipanteService service = new ParticipanteService(participantes);
+service.cadastrar(nome, email, proximoParticipanteId++);
+		System.out.println("Participante cadastrado: " + (proximoParticipanteId - 1));
 	}
 
 	static void cadastrarProva() {
