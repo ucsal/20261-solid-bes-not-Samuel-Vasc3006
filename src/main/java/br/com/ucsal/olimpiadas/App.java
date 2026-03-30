@@ -2,6 +2,8 @@ package br.com.ucsal.olimpiadas;
 import br.com.ucsal.olimpiadas.service.ParticipanteService;
 import br.com.ucsal.olimpiadas.service.ProvaService;
 import br.com.ucsal.olimpiadas.service.QuestaoService;
+import br.com.ucsal.olimpiadas.service.TentativaService;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -154,11 +156,10 @@ System.out.println("Questão cadastrada: " + (proximaQuestaoId - 1) + " (na prov
 			System.out.println(q.getEnunciado());
 
 			System.out.println("Posição inicial:");
-			imprimirTabuleiroFen(q.getFenInicial());
 
-			for (var alt : q.getAlternativas()) {
-			    System.out.println(alt);
-			}
+if (q.getFenInicial() != null) {
+    imprimirTabuleiroFen(q.getFenInicial());
+}
 
 			System.out.print("Sua resposta (A–E): ");
 			char marcada;
@@ -179,19 +180,14 @@ System.out.println("Questão cadastrada: " + (proximaQuestaoId - 1) + " (na prov
 
 		tentativas.add(tentativa);
 
-		int nota = calcularNota(tentativa);
+		TentativaService service = new TentativaService();
+int nota = service.calcularNota(tentativa);
 		System.out.println("\n--- Fim da Prova ---");
 		System.out.println("Nota (acertos): " + nota + " / " + tentativa.getRespostas().size());
 	}
 
-	public static int calcularNota(Tentativa tentativa) {
-		int acertos = 0;
-		for (var r : tentativa.getRespostas()) {
-			if (r.isCorreta())
-				acertos++;
-		}
-		return acertos;
-	}
+	
+		
 
 	static void listarTentativas() {
 		System.out.println("\n--- Tentativas ---");
