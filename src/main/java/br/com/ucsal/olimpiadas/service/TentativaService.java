@@ -2,7 +2,7 @@ package br.com.ucsal.olimpiadas.service;
 
 import br.com.ucsal.olimpiadas.Tentativa;
 
-public class TentativaService {
+public class TentativaService implements TentativaServiceInterface {
 
     public int calcularNota(Tentativa tentativa) {
         int acertos = 0;

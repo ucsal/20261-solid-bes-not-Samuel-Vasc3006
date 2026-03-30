@@ -4,6 +4,7 @@ import br.com.ucsal.olimpiadas.service.ParticipanteService;
 import br.com.ucsal.olimpiadas.service.ProvaService;
 import br.com.ucsal.olimpiadas.service.QuestaoService;
 import br.com.ucsal.olimpiadas.service.TentativaService;
+import br.com.ucsal.olimpiadas.service.TentativaServiceInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -183,7 +184,7 @@ public class App {
 
         tentativas.add(tentativa);
 
-        TentativaService service = new TentativaService();
+        TentativaServiceInterface service = new TentativaService();
         int nota = service.calcularNota(tentativa);
 
         System.out.println("\n--- Fim da Prova ---");
@@ -193,7 +194,7 @@ public class App {
     static void listarTentativas() {
         System.out.println("\n--- Tentativas ---");
 
-        TentativaService service = new TentativaService();
+        TentativaServiceInterface service = new TentativaService();
 
         for (var t : tentativas) {
             System.out.printf(
