@@ -1,8 +1,7 @@
 package br.com.ucsal.olimpiadas;
 
 import java.util.Arrays;
-
-public class Questao {
+public class Questao implements Avaliavel {
 
 	private long id;
 	private long provaId;
