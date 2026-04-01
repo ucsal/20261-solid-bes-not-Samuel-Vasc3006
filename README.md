@@ -2,7 +2,7 @@
 
 Esse projeto foi refatorado com base nos princípios do SOLID, com o objetivo de melhorar a organização do código sem alterar o comportamento original do sistema.
 
-A ideia foi pegar um código "legado" (meio bagunçado 😅) e deixar ele mais estruturado, modular e fácil de manter.
+A ideia foi pegar um código "legado" (meio bagunçado hehehehehe) e deixar ele mais estruturado, modular e fácil de manter.
 
 
 ## O que foi feito?
@@ -25,9 +25,7 @@ Agora:
   - `QuestaoService`
   - `TentativaService`
 
-Cada uma ficou responsável por uma parte específica do sistema.
-
-Resultado: código mais organizado e fácil de entender.
+Cada uma ficou responsável por uma parte específica do sistema. Como resultado, temos o código mais organizado e fácil de entender.
 
 
 ### O — Open/Closed Principle (OCP)
