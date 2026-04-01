@@ -25,9 +25,7 @@ Agora:
   - `QuestaoService`
   - `TentativaService`
 
-Cada uma ficou responsável por uma parte específica do sistema.
-
-Resultado: código mais organizado e fácil de entender.
+Cada uma ficou responsável por uma parte específica do sistema. Como resultado, temos o código mais organizado e fácil de entender.
 
 
 ### O — Open/Closed Principle (OCP)
