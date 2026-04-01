@@ -2,7 +2,7 @@
 
 Esse projeto foi refatorado com base nos princípios do SOLID, com o objetivo de melhorar a organização do código sem alterar o comportamento original do sistema.
 
-A ideia foi pegar um código "legado" (meio bagunçado 😅) e deixar ele mais estruturado, modular e fácil de manter.
+A ideia foi pegar um código "legado" (meio bagunçado hehehehe) e deixar ele mais estruturado, modular e fácil de manter.
 
 
 ## O que foi feito?
